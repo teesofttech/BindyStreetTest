@@ -20,7 +20,6 @@ namespace BindyStreet.Persistence.Context
         {
         }
 
-
         public virtual DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -28,15 +27,6 @@ namespace BindyStreet.Persistence.Context
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
-        ////public virtual DbSet<Author> Author { get; set; }
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<User>(entity => {
-        //        entity.HasKey(k => k.Id);
-        //    });
-        //    OnModelCreatingPartial(modelBuilder);
-        //}
-        //partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
     }
 }

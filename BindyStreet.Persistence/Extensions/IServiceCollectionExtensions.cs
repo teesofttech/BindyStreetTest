@@ -18,14 +18,10 @@ namespace BindyStreet.Persistence.Extensions
         }
         public static void AddDbContext(this IServiceCollection services, IConfiguration configuration)
         {
-            //var defaultConnectionString = configuration.GetConnectionString("BindyStreetContext");
-            //services.AddDbContext<BindyStreetContext>(options =>
-            //   options.UseSqlServer(defaultConnectionString, options => options.EnableRetryOnFailure()));
-
             services.AddDbContext<BindyStreetContext>(options =>
                options.UseSqlServer(
                    configuration.GetConnectionString("BindyStreetContext"),
-                   b => b.MigrationsAssembly(typeof(BindyStreetContext).Assembly.FullName)));
+                   b => b.MigrationsAssembly(typeof(BindyStreetContext).Assembly.FullName)), ServiceLifetime.Scoped);
 
         }
 

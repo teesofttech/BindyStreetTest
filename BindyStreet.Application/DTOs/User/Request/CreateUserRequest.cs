@@ -16,4 +16,6 @@ namespace BindyStreet.Application.DTOs.User.UserRequest
         public string Website { get; set; }
         public CompanyDto Company { get; set; }
     }
+
+
 }

@@ -1,13 +1,7 @@
-﻿using BindyStreet.Application.DTOs.User.Response;
-using BindyStreet.Application.Repositories;
+﻿using BindyStreet.Application.Repositories;
 using BindyStreet.Domain.Entities;
 using BindyStreet.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BindyStreet.Persistence.Repositories
 {
@@ -19,6 +13,7 @@ namespace BindyStreet.Persistence.Repositories
             dbContext = _DbContext;
         }
 
+        //another way to use include, and split query
         public async Task<List<User>> GetAllUsers()
         {
             return await dbContext.Users

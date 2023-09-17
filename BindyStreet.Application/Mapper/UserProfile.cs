@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BindyStreet.Application.DTOs.User.Request;
 using BindyStreet.Application.DTOs.User.Response;
 using BindyStreet.Application.DTOs.User.UserRequest;
 using BindyStreet.Application.Features.UserFeatures.Queries.GetUserById;
@@ -19,6 +20,7 @@ namespace BindyStreet.Application.Mapper
             CreateMap<User, GetAllUsersDto>().ReverseMap();
             CreateMap<User, GetUserByIdDto>().ReverseMap();
             CreateMap<GetUserByIdDto, User>().ReverseMap();
+            CreateMap<User, UpdateUserRequest>().ReverseMap();
         }
     }
 }

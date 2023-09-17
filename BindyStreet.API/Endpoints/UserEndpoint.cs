@@ -1,5 +1,8 @@
-﻿using BindyStreet.Application.DTOs.User.UserRequest;
+﻿using BindyStreet.Application.DTOs.User.Request;
+using BindyStreet.Application.DTOs.User.UserRequest;
 using BindyStreet.Application.Features.UserFeatures.Commands.CreateUser;
+using BindyStreet.Application.Features.UserFeatures.Commands.DeleteUser;
+using BindyStreet.Application.Features.UserFeatures.Commands.UpdateUser;
 using BindyStreet.Application.Features.UserFeatures.Queries.GetAllUsers;
 using BindyStreet.Application.Features.UserFeatures.Queries.GetUserById;
 using BindyStreet.Application.Validator;
@@ -16,7 +19,7 @@ namespace BindyStreet.API.Endpoints
         private string UserModule { get; set; } = "User Module";
 
         /// <summary>
-        /// Endpoint to create user 
+        /// This is the endpoint to create user record 
         /// </summary>
         /// <param name="createUserRequest"></param>
         /// <param name="_sender"></param>
@@ -38,7 +41,7 @@ namespace BindyStreet.API.Endpoints
         }
 
         /// <summary>
-        /// Get All Users
+        /// This is the endpoint to return users record
         /// </summary>
         /// <param name="_mediator"></param>
         /// <returns></returns>
@@ -50,7 +53,7 @@ namespace BindyStreet.API.Endpoints
         }
 
         /// <summary>
-        /// Endpoint to fetch user by id
+        /// This is the endpoint to return user record by id
         /// </summary>
         /// <param name="id"></param>
         /// <param name="_mediator"></param>
@@ -68,49 +71,45 @@ namespace BindyStreet.API.Endpoints
             }
         }
 
-        ///// <summary>
-        ///// This endpoint for deleting bedroom
-        ///// </summary>
-        ///// <param name="id"></param>
-        ///// <param name="houseService"></param>
-        ///// <returns></returns>
-        //public async Task<Results<Ok<MyHttpResponse<bool>>, NotFound<string>>> DeleteBedroom(int id, IBedroomService bedroomService)
-        //{
-        //    if (id == 0)
-        //    {
-        //        return TypedResults.NotFound("Id cannot be zero");
-        //    }
-        //    else
-        //    {
-        //        var result = await bedroomService.DeleteBedroom(id);
-        //        if (result.data)
-        //            return TypedResults.Ok(result);
-        //        else
-        //            return TypedResults.NotFound("No data found");
-        //    }
-        //}
-
-        ///// <summary>
-        ///// This endpoint is for updating bedroom
-        ///// </summary>
-        ///// <param name="houseDto"></param>
-        ///// <param name="houseService"></param>
-        ///// <returns></returns>
-        //public async Task<Results<Ok<MyHttpResponse<BedroomDto>>, NotFound<string>>> UpdateBedroom(BedroomDto bedroomDto, IBedroomService bedroomService)
-        //{
-        //    if (bedroomDto == null)
-        //    {
-        //        return TypedResults.NotFound("Bedroom Properties cannot be null");
-        //    }
-        //    else
-        //    {
-        //        var result = await bedroomService.UpdateBedroom(bedroomDto);
-        //        return TypedResults.Ok(result);
-        //    }
-        //}
+        /// <summary>
+        /// This is the endpoint to delete user record by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="_mediator"></param>
+        /// <returns></returns>
+        public async Task<IResult> DeleteUser(int id, IMediator _mediator)
+        {
+            if (id == 0)
+            {
+                return Results.BadRequest("Id cannot be zero");
+            }
+            else
+            {
+                var result = await _mediator.Send(new DeleteUserCommand(id));
+                return Results.Ok(result);
+            }
+        }
 
         /// <summary>
-        /// Routes setup for House Module
+        /// This is the endpoint to update user record
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="updateUserRequest"></param>
+        /// <param name="_mediator"></param>
+        /// <returns></returns>
+        public async Task<IResult> UpdateUser(int id, UpdateUserRequest updateUserRequest, IMediator _mediator)
+        {
+            if (id != updateUserRequest.Id)
+            {
+                return Results.BadRequest();
+            }
+
+            var result = await _mediator.Send(new UpdateUserCommand() { UpdateUserRequest = updateUserRequest });
+            return Results.Ok(result);
+        }
+
+        /// <summary>
+        /// Routes setup for User Module
         /// </summary>
         /// <param name="app"></param>
         public void AddRoutes(IEndpointRouteBuilder app)
@@ -121,9 +120,9 @@ namespace BindyStreet.API.Endpoints
 
             app.MapGet("api/v1/users/{id}", GetUser);
 
-            //group.MapPut("", UpdateBedroom);
+            app.MapPut("api/v1/users", UpdateUser);
 
-            //group.MapDelete("{id}", DeleteBedroom);
+            app.MapDelete("api/v1/users/{id}", DeleteUser);
 
         }
     }

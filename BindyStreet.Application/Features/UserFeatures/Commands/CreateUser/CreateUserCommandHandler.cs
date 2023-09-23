@@ -22,7 +22,6 @@ namespace BindyStreet.Application.Features.UserFeatures.Commands.CreateUser
         {
             var user = _mapper.Map<CreateUserRequest, User>(command.CreateUserRequest);
             await _unitOfWork.UserRepository.AddAsync(user);
-            //user.AddDomainEvent(new PlayerCreatedEvent(player));
             await _unitOfWork.Save(cancellationToken);
             return await Result<int>.SuccessAsync(user.Id, "User Created.");
         }

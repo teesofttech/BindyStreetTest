@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BindyStreet.Persistence.Migrations
 {
     [DbContext(typeof(BindyStreetContext))]
-    [Migration("20230916145606_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230923013921_initial create")]
+    partial class initialcreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

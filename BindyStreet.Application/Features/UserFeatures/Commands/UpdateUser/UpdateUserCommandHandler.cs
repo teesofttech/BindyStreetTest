@@ -30,9 +30,7 @@ namespace BindyStreet.Application.Features.UserFeatures.Commands.UpdateUser
             if (user != null)
             {
                 var mapped = _mapper.Map<User>(command.UpdateUserRequest);
-                await _unitOfWork.UserRepository.Update(user);
-                // user.AddDomainEvent(new UserUpdatedEvent(user));
-
+                await _unitOfWork.UserRepository.Update(mapped);
                 await _unitOfWork.Save(cancellationToken);
 
                 return await Result<int>.SuccessAsync(user.Id, "User Updated.");

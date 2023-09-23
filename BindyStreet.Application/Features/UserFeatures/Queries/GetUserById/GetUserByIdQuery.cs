@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BindyStreet.Application.DTOs.User.Response;
 using BindyStreet.Application.Repositories;
 using BindyStreet.Application.Specifications;
 using BindyStreet.Shared;

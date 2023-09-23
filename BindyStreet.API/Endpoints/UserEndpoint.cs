@@ -114,7 +114,7 @@ namespace BindyStreet.API.Endpoints
         /// <param name="app"></param>
         public void AddRoutes(IEndpointRouteBuilder app)
         {
-            app.MapPost("api/v1/user", CreateUser);
+            app.MapPost("api/v1/users", CreateUser);
 
             app.MapGet("api/v1/users", GetAllUsers);
 

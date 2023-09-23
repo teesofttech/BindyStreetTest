@@ -20,8 +20,4 @@
 		<ProjectReference Include="..\BindyStreet.Shared\BindyStreet.Shared.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<Folder Include="Features\UserFeatures\Queries\GetUsersWithPagination\" />
-	</ItemGroup>
-
 </Project>

@@ -28,8 +28,6 @@ namespace BindyStreet.Application.Features.UserFeatures.Commands.DeleteUser
             if (user != null)
             {
                 await _unitOfWork.UserRepository.Delete(user);
-                // player.AddDomainEvent(new PlayerDeletedEvent(player));
-
                 await _unitOfWork.Save(cancellationToken);
 
                 return await Result<int>.SuccessAsync(user.Id, "User Deleted");

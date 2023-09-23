@@ -2,7 +2,6 @@
 using BindyStreet.Application.DTOs.User.Request;
 using BindyStreet.Application.DTOs.User.Response;
 using BindyStreet.Application.DTOs.User.UserRequest;
-using BindyStreet.Application.Features.UserFeatures.Queries.GetUserById;
 using BindyStreet.Domain.Entities;
 using System;
 using System.Collections.Generic;

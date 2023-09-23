@@ -1,6 +1,6 @@
 ﻿using BindyStreet.Application.DTOs.User.UserRequest;
 
-namespace BindyStreet.Application.Features.UserFeatures.Queries.GetUserById
+namespace BindyStreet.Application.DTOs.User.Response
 {
     public class GetUserByIdDto
     {

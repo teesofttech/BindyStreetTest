@@ -26,20 +26,13 @@ namespace BindyStreet.Application.Features.UserFeatures.Commands.UpdateUser
 
         public async Task<Result<int>> Handle(UpdateUserCommand command, CancellationToken cancellationToken)
         {
-            var user = await _unitOfWork.UserRepository.GetByIdAsync(command.UpdateUserRequest.Id);
-            if (user != null)
-            {
-                var mapped = _mapper.Map<User>(command.UpdateUserRequest);
-                await _unitOfWork.UserRepository.Update(mapped);
-                await _unitOfWork.Save(cancellationToken);
-
-                return await Result<int>.SuccessAsync(user.Id, "User Updated.");
-            }
-            else
-            {
-                return await Result<int>.FailureAsync("User Not Found.");
-            }
+            var mapped = _mapper.Map<User>(command.UpdateUserRequest);
+            var updateQuery = _unitOfWork.UserRepository.Update(mapped);
+            var saveUow = _unitOfWork.Save(cancellationToken);
+            await Task.WhenAll(updateQuery, saveUow);
+            return await Result<int>.SuccessAsync(command.UpdateUserRequest.Id, "User Updated.");
         }
+
     }
 
 }

@@ -3,6 +3,8 @@ using BindyStreet.Application.Specifications;
 using BindyStreet.Domain.Common;
 using BindyStreet.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
+using SharpCompress.Common;
+using System.Collections.Generic;
 
 namespace BindyStreet.Persistence.Repositories
 {
@@ -22,8 +24,10 @@ namespace BindyStreet.Persistence.Repositories
         }
 
         public async Task<T> Update(T newEntity)
-        {
-            dbContext.Update<T>(newEntity);
+        {  
+            dbContext.Set<T>().Attach(newEntity);
+            dbContext.Entry(newEntity).State = EntityState.Modified;
+
             return newEntity;
         }
 

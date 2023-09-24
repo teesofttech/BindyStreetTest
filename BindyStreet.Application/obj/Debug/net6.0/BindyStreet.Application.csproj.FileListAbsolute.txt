@@ -1,0 +1,17 @@
+D:\babat\Source\BindyStreet\BindyStreet.Application\bin\Debug\net6.0\BindyStreet.Application.deps.json
+D:\babat\Source\BindyStreet\BindyStreet.Application\bin\Debug\net6.0\BindyStreet.Application.dll
+D:\babat\Source\BindyStreet\BindyStreet.Application\bin\Debug\net6.0\BindyStreet.Application.pdb
+D:\babat\Source\BindyStreet\BindyStreet.Application\bin\Debug\net6.0\BindyStreet.Domain.dll
+D:\babat\Source\BindyStreet\BindyStreet.Application\bin\Debug\net6.0\BindyStreet.Shared.dll
+D:\babat\Source\BindyStreet\BindyStreet.Application\bin\Debug\net6.0\BindyStreet.Domain.pdb
+D:\babat\Source\BindyStreet\BindyStreet.Application\bin\Debug\net6.0\BindyStreet.Shared.pdb
+D:\babat\Source\BindyStreet\BindyStreet.Application\obj\Debug\net6.0\BindyStreet.Application.csproj.AssemblyReference.cache
+D:\babat\Source\BindyStreet\BindyStreet.Application\obj\Debug\net6.0\BindyStreet.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\babat\Source\BindyStreet\BindyStreet.Application\obj\Debug\net6.0\BindyStreet.Application.AssemblyInfoInputs.cache
+D:\babat\Source\BindyStreet\BindyStreet.Application\obj\Debug\net6.0\BindyStreet.Application.AssemblyInfo.cs
+D:\babat\Source\BindyStreet\BindyStreet.Application\obj\Debug\net6.0\BindyStreet.Application.csproj.CoreCompileInputs.cache
+D:\babat\Source\BindyStreet\BindyStreet.Application\obj\Debug\net6.0\BindyStreet.Application.csproj.CopyComplete
+D:\babat\Source\BindyStreet\BindyStreet.Application\obj\Debug\net6.0\BindyStreet.Application.dll
+D:\babat\Source\BindyStreet\BindyStreet.Application\obj\Debug\net6.0\refint\BindyStreet.Application.dll
+D:\babat\Source\BindyStreet\BindyStreet.Application\obj\Debug\net6.0\BindyStreet.Application.pdb
+D:\babat\Source\BindyStreet\BindyStreet.Application\obj\Debug\net6.0\ref\BindyStreet.Application.dll

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\BindyStreet.API.Controllers.props" />
+</Project>

@@ -1,0 +1,11 @@
+D:\babat\Source\BindyStreet\BindyStreet.Shared\bin\Debug\net6.0\BindyStreet.Shared.deps.json
+D:\babat\Source\BindyStreet\BindyStreet.Shared\bin\Debug\net6.0\BindyStreet.Shared.dll
+D:\babat\Source\BindyStreet\BindyStreet.Shared\bin\Debug\net6.0\BindyStreet.Shared.pdb
+D:\babat\Source\BindyStreet\BindyStreet.Shared\obj\Debug\net6.0\BindyStreet.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\babat\Source\BindyStreet\BindyStreet.Shared\obj\Debug\net6.0\BindyStreet.Shared.AssemblyInfoInputs.cache
+D:\babat\Source\BindyStreet\BindyStreet.Shared\obj\Debug\net6.0\BindyStreet.Shared.AssemblyInfo.cs
+D:\babat\Source\BindyStreet\BindyStreet.Shared\obj\Debug\net6.0\BindyStreet.Shared.csproj.CoreCompileInputs.cache
+D:\babat\Source\BindyStreet\BindyStreet.Shared\obj\Debug\net6.0\BindyStreet.Shared.dll
+D:\babat\Source\BindyStreet\BindyStreet.Shared\obj\Debug\net6.0\refint\BindyStreet.Shared.dll
+D:\babat\Source\BindyStreet\BindyStreet.Shared\obj\Debug\net6.0\BindyStreet.Shared.pdb
+D:\babat\Source\BindyStreet\BindyStreet.Shared\obj\Debug\net6.0\ref\BindyStreet.Shared.dll

@@ -1,0 +1,12 @@
+D:\babat\Source\BindyStreet\BindyStreet.Domain\bin\Debug\net6.0\BindyStreet.Domain.deps.json
+D:\babat\Source\BindyStreet\BindyStreet.Domain\bin\Debug\net6.0\BindyStreet.Domain.dll
+D:\babat\Source\BindyStreet\BindyStreet.Domain\bin\Debug\net6.0\BindyStreet.Domain.pdb
+D:\babat\Source\BindyStreet\BindyStreet.Domain\obj\Debug\net6.0\BindyStreet.Domain.csproj.AssemblyReference.cache
+D:\babat\Source\BindyStreet\BindyStreet.Domain\obj\Debug\net6.0\BindyStreet.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\babat\Source\BindyStreet\BindyStreet.Domain\obj\Debug\net6.0\BindyStreet.Domain.AssemblyInfoInputs.cache
+D:\babat\Source\BindyStreet\BindyStreet.Domain\obj\Debug\net6.0\BindyStreet.Domain.AssemblyInfo.cs
+D:\babat\Source\BindyStreet\BindyStreet.Domain\obj\Debug\net6.0\BindyStreet.Domain.csproj.CoreCompileInputs.cache
+D:\babat\Source\BindyStreet\BindyStreet.Domain\obj\Debug\net6.0\BindyStreet.Domain.dll
+D:\babat\Source\BindyStreet\BindyStreet.Domain\obj\Debug\net6.0\refint\BindyStreet.Domain.dll
+D:\babat\Source\BindyStreet\BindyStreet.Domain\obj\Debug\net6.0\BindyStreet.Domain.pdb
+D:\babat\Source\BindyStreet\BindyStreet.Domain\obj\Debug\net6.0\ref\BindyStreet.Domain.dll

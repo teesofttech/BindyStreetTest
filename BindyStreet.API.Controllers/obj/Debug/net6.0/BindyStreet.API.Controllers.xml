@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BindyStreet.API.Controllers</name>
+    </assembly>
+    <members>
+        <member name="T:BindyStreet.API.Controllers.Controllers.CommentController">
+            <summary>
+            Endpoint for Post Comment
+            </summary>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.CommentController.CreatePostComment(BindyStreet.Application.DTOs.PostComment.Request.CreatePostCommentRequest)">
+            <summary>
+            This is the endpoint to create comment record
+            </summary>
+            <param name="createPostCommentRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.CommentController.GetAllComments">
+            <summary>
+            This is the endpoint to return comment record
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.CommentController.GetPostComment(System.Int32)">
+            <summary>
+            This is the endpoint to return comment record by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.CommentController.DeletePostComment(System.Int32)">
+            <summary>
+            This is the endpoint to delete post comment record by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.CommentController.UpdatePostComment(System.Int32,BindyStreet.Application.DTOs.PostComment.Request.UpdatePostCommentRequest)">
+            <summary>
+            This is the endpoint to update post comment record
+            </summary>
+            <param name="id"></param>
+            <param name="updatePostRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.CommentController.GetAllPostComments(System.Int32)">
+            <summary>
+            This is the endpoint to return all comments by post id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BindyStreet.API.Controllers.Controllers.PostsController">
+            <summary>
+            Endpoint for Posts
+            </summary>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.PostsController.CreatePost(BindyStreet.Application.DTOs.Post.Request.CreatePostRequest)">
+            <summary>
+            This is the endpoint to create post record
+            </summary>
+            <param name="createPostRequest"></param>
+            <param name="_mediator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.PostsController.GetAllPosts">
+            <summary>
+            This is the endpoint to return post record
+            </summary>
+            <param name="_mediator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.PostsController.GetPost(System.Int32)">
+            <summary>
+            This is the endpoint to return post record by id
+            </summary>
+            <param name="id"></param>
+            <param name="_mediator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.PostsController.DeletePost(System.Int32)">
+            <summary>
+            This is the endpoint to delete post record by id
+            </summary>
+            <param name="id"></param>
+            <param name="_mediator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.PostsController.UpdatePost(System.Int32,BindyStreet.Application.DTOs.Post.Request.UpdatePostRequest)">
+            <summary>
+            This is the endpoint to update post record
+            </summary>
+            <param name="id"></param>
+            <param name="updatePostRequest"></param>
+            <param name="_mediator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.PostsController.GetAllPostComments(System.Int32)">
+            <summary>
+            This is the endpoint to return all comments by post id
+            </summary>
+            <param name="id"></param>
+            <param name="_mediator"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BindyStreet.API.Controllers.Controllers.UsersController">
+            <summary>
+            Endpoint for User 
+            </summary>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.UsersController.CreateUser(BindyStreet.Application.DTOs.User.UserRequest.CreateUserRequest)">
+            <summary>
+            This is the endpoint to create user record 
+            </summary>
+            <param name="createUserRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.UsersController.GetAllUsers">
+            <summary>
+            This is the endpoint to return users record
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.UsersController.GetUser(System.Int32)">
+            <summary>
+            This is the endpoint to return user record by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.UsersController.DeleteUser(System.Int32)">
+            <summary>
+            This is the endpoint to delete user record by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BindyStreet.API.Controllers.Controllers.UsersController.UpdateUser(System.Int32,BindyStreet.Application.DTOs.User.Request.UpdateUserRequest)">
+            <summary>
+            This is the endpoint to update user record
+            </summary>
+            <param name="id"></param>
+            <param name="updateUserRequest"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

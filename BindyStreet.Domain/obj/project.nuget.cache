@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "3QzIEvcoYG88WPP7ANIhgN5Z5ude3hCEV/dk3oOuudJl7SUUdkPUP+oqbq21V4OT3+UTrnN79gCfvy64enkbXg==",
+  "success": true,
+  "projectFilePath": "D:\\babat\\Source\\BindyStreet\\BindyStreet.Domain\\BindyStreet.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\babat\\.nuget\\packages\\mongodb.bson\\2.21.0\\mongodb.bson.2.21.0.nupkg.sha512",
+    "C:\\Users\\babat\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "C:\\Users\\babat\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

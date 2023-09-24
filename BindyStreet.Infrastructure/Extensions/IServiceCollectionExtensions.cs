@@ -14,8 +14,6 @@ namespace BindyStreet.Infrastructure.Extensions
         {
             services
                 .AddTransient<IMediator, Mediator>();
-
-            //AddTransient<IDomainEventDispatcher, DomainEventDispatcher>()
         }
     }
 }

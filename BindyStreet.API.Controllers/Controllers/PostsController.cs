@@ -6,24 +6,25 @@ using BindyStreet.Application.Features.PostFeatures.Commands.UpdatePost;
 using BindyStreet.Application.Features.PostFeatures.Queries.GetAllPosts;
 using BindyStreet.Application.Features.PostFeatures.Queries.GetPostById;
 using BindyStreet.Application.Validator;
-using Carter;
-using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
-namespace BindyStreet.API.Endpoints
+namespace BindyStreet.API.Controllers.Controllers
 {
     /// <summary>
-    /// Post Module
+    /// Endpoint for Posts
     /// </summary>
-    public class PostEndpoint : ICarterModule
+    [Route("api/v1/[controller]")]
+    [ApiController]
+    public class PostsController : BaseController
     {
-        private string PostModule { get; set; } = "Post Module";
         /// <summary>
         /// This is the endpoint to create post record
         /// </summary>
         /// <param name="createPostRequest"></param>
         /// <param name="_mediator"></param>
         /// <returns></returns>
-        public async Task<IResult> CreatePost(CreatePostRequest createPostRequest, IMediator _mediator)
+        [HttpPost]
+        public async Task<IActionResult> CreatePost(CreatePostRequest createPostRequest)
         {
             var postRequestValidator = new CreatePostRequestValidator();
             var result = postRequestValidator.Validate(createPostRequest);
@@ -31,12 +32,12 @@ namespace BindyStreet.API.Endpoints
             if (result.IsValid)
             {
                 var resuest = new CreatePostCommand() { CreatePostRequest = createPostRequest };
-                var postId = await _mediator.Send(resuest);
-                return Results.Ok(postId);
+                var postId = await Mediator.Send(resuest);
+                return Ok(postId);
             }
 
             var errorMessages = result.Errors.Select(x => x.ErrorMessage).ToList();
-            return Results.BadRequest(errorMessages);
+            return BadRequest(errorMessages);
         }
 
         /// <summary>
@@ -44,10 +45,11 @@ namespace BindyStreet.API.Endpoints
         /// </summary>
         /// <param name="_mediator"></param>
         /// <returns></returns>
-        public async Task<IResult> GetAllPosts(IMediator _mediator)
+        [HttpGet]
+        public async Task<IActionResult> GetAllPosts()
         {
-            var result = await _mediator.Send(new GetAllPostsQuery());
-            return Results.Ok(result);
+            var result = await Mediator.Send(new GetAllPostsQuery());
+            return Ok(result);
 
         }
 
@@ -57,16 +59,18 @@ namespace BindyStreet.API.Endpoints
         /// <param name="id"></param>
         /// <param name="_mediator"></param>
         /// <returns></returns>
-        public async Task<IResult> GetPost(int id, IMediator _mediator)
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> GetPost(int id)
         {
             if (id == 0)
             {
-                return Results.BadRequest("Id cannot be zero");
+                return BadRequest("Id cannot be zero");
             }
             else
             {
-                var result = await _mediator.Send(new GetPostByIdQuery(id));
-                return Results.Ok(result);
+                var result = await Mediator.Send(new GetPostByIdQuery(id));
+                return Ok(result);
             }
         }
 
@@ -76,16 +80,18 @@ namespace BindyStreet.API.Endpoints
         /// <param name="id"></param>
         /// <param name="_mediator"></param>
         /// <returns></returns>
-        public async Task<IResult> DeletePost(int id, IMediator _mediator)
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<IActionResult> DeletePost(int id)
         {
             if (id == 0)
             {
-                return Results.BadRequest("Id cannot be zero");
+                return BadRequest("Id cannot be zero");
             }
             else
             {
-                var result = await _mediator.Send(new DeletePostCommand(id));
-                return Results.Ok(result);
+                var result = await Mediator.Send(new DeletePostCommand(id));
+                return Ok(result);
             }
         }
 
@@ -96,15 +102,17 @@ namespace BindyStreet.API.Endpoints
         /// <param name="updatePostRequest"></param>
         /// <param name="_mediator"></param>
         /// <returns></returns>
-        public async Task<IResult> UpdatePost(int id, UpdatePostRequest updatePostRequest, IMediator _mediator)
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> UpdatePost(int id, UpdatePostRequest updatePostRequest)
         {
             if (id != updatePostRequest.Id)
             {
-                return Results.BadRequest();
+                return BadRequest();
             }
 
-            var result = await _mediator.Send(new UpdatePostCommand() { UpdatePostRequest = updatePostRequest });
-            return Results.Ok(result);
+            var result = await Mediator.Send(new UpdatePostCommand() { UpdatePostRequest = updatePostRequest });
+            return Ok(result);
         }
 
 
@@ -114,38 +122,20 @@ namespace BindyStreet.API.Endpoints
         /// <param name="id"></param>
         /// <param name="_mediator"></param>
         /// <returns></returns>
-        public async Task<IResult> GetAllPostComments(int id, IMediator _mediator)
+        [HttpGet]
+        [Route("{id}/Comments")]
+        public async Task<IActionResult> GetAllPostComments(int id)
         {
             if (id == 0)
             {
-                return Results.BadRequest("Id cannot be zero");
+                return BadRequest("Id cannot be zero");
             }
             else
             {
-                var result = await _mediator.Send(new GetAllCommentsByPostIdQuery(id));
-                return Results.Ok(result);
+                var result = await Mediator.Send(new GetAllCommentsByPostIdQuery(id));
+                return Ok(result);
             }
         }
 
-
-        /// <summary>
-        /// Routes setup for Post Module
-        /// </summary>
-        /// <param name="app"></param>
-        public void AddRoutes(IEndpointRouteBuilder app)
-        {
-            app.MapPost("api/v1/posts", CreatePost);
-
-            app.MapGet("api/v1/posts", GetAllPosts);
-
-            app.MapGet("api/v1/posts/{id}", GetPost);
-
-            app.MapPut("api/v1/posts", UpdatePost);
-
-            app.MapDelete("api/v1/posts/{id}", DeletePost);
-
-            app.MapGet("api/v1/posts/{id}/comments", GetAllPostComments);
-
-        }
     }
 }

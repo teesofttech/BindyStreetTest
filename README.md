@@ -5,5 +5,5 @@ Tech Stack Used
  -  ASP.NET CORE 6
  -  MSSQL
  -  MONGODB
- -  MINIMAL API
+ -  WEB API
  -  CQRS PATTERN.
